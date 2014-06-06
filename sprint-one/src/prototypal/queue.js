@@ -29,5 +29,3 @@ queueMethods.dequeue = function(){
 queueMethods.size = function(){
   return this.tail - this.head;
 };
-
-// TypeError: Cannot convert undefined or null to object
