@@ -17,6 +17,7 @@ var makeQueue = function(){
   };
 
 
+
   someInstance.dequeue = function(){
     if (_tail-_head === 0){
       _tail = 0;
