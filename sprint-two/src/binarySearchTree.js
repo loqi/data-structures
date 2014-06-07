@@ -18,13 +18,15 @@ var bst_insert = function(value) { // O(log n) on balanced tree -- O(n) unbalanc
 };
 
 var bst_contains = function(value){ // O(log n) on balanced tree -- O(n) unbalanced
-  if (value < this.value) return this.left  ? this.left.contains(value) : false;
-  if (value > this.value) return this.right ? this.right.contains(value) : false;
+  if (value < this.value) { return ( this.left  ? this.left.contains(value) : false ); }
+  if (value > this.value) { return ( this.right ? this.right.contains(value) : false ); }
   return true;
 };
 
-var bst_depthFirstLog = function(){
-  
+var bst_depthFirstLog = function(func){ // O(n) on any tree
+  func.call(null, this.value);
+  if (this.left) this.left.depthFirstLog(func);
+  if (this.right) this.right.depthFirstLog(func);
 };
 
 /*
